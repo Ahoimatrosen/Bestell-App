@@ -1,0 +1,83 @@
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+button {
+}
+
+.landing-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 32px;
+}
+.landing-section > header {
+    background-color: #e76c1f;
+    width: 100%;
+    height: 80px;
+    padding: 16px;
+}
+.landing-section > img {
+    width: 100%;
+    border-radius: 16px;
+    padding: 32px 16px;
+}
+
+.title-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    text-align: center;
+}
+.title-section img {
+    width: 110px;
+    height: 32px;
+}
+.title-section > div > h1 {
+    font-size: 40px;
+}
+.title-section > div > p {
+    font-size: 22px;
+}
+.orange-color {
+    color: #de7027;
+}
+
+.content-section {
+    padding: 32px 16px;
+}
+
+.title-banner img {
+    width: 100%;
+}
+
+.meal-item {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 720px;
+    background-color: #fdeadc;
+    border-radius: 12px;
+    padding: 10px;
+}
+.meal-item header {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.meal-item > header > img {
+    width: 100%;
+}
+.meal-item > footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.meal-item button {
+    background-color: white;
+    padding: 5px 8px;
+    border-radius: 20px;
+}
