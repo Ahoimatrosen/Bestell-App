@@ -14,18 +14,34 @@ button {
     outline: inherit;
 }
 
-.fs-16 {
-    font-size: 16px;
-}
-
-.fs-24 {
-    font-size: 24px;
-}
-
-.flexbox {
-    display: flex;
+.bold {
+    font-weight: bold;
 }
 .center {
     align-items: center;
     justify-content: center;
+}
+.flexbox {
+    display: flex;
+}
+.fs-16 {
+    font-size: 16px;
+}
+.fs-18 {
+    font-size: 18px;
+}
+.fs-20 {
+    font-size: 20px;
+}
+.fs-22 {
+    font-size: 22px;
+}
+.fs-24 {
+    font-size: 24px;
+}
+.fs-32 {
+    font-size: 32px;
+}
+.fs-64 {
+    font-size: 64px;
 }

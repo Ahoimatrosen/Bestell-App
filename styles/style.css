@@ -2,10 +2,19 @@
     --main-font-style: Palanquin;
 }
 
+body {
+    font-family: "Palanquin";
+}
+
 main {
     display: flex;
     flex-direction: column;
     gap: 32px;
+}
+
+h1 {
+    font-family: "Palanquin Dark";
+    font-weight: 700;
 }
 
 .landing-section {
@@ -42,16 +51,19 @@ main {
 }
 .title-section > div > p {
     font-size: 22px;
+    font-weight: bold;
+    padding: 16px;
+    line-height: 120%;
 }
 .orange-color {
     color: #de7027;
 }
 
-.content-section {
+.content-section-content {
     padding: 32px 16px;
 }
 
-.title-banner img {
+.content-section-title-banner {
     width: 100%;
 }
 
