@@ -1,10 +1,11 @@
+:root {
+    --main-font-style: Palanquin;
+}
+
 main {
     display: flex;
     flex-direction: column;
     gap: 32px;
-}
-
-button {
 }
 
 .landing-section {
@@ -80,4 +81,39 @@ button {
     background-color: white;
     padding: 5px 8px;
     border-radius: 20px;
+}
+
+.main-footer {
+    color: white;
+    background-color: #e76c1f;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 32px 0px;
+}
+
+.main-footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+nav {
+    display: flex;
+    background-color: #363534;
+    height: 80px;
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+}
+
+.navigation-menu {
+    width: 100%;
+    display: flex;
+    gap: 32px;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    padding: 24px 25px;
 }
