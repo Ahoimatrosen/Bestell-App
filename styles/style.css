@@ -6,15 +6,10 @@ body {
     font-family: "Palanquin";
 }
 
-main {
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
-}
-
 h1 {
     font-family: "Palanquin Dark";
     font-weight: 700;
+    font-size: 40px;
 }
 
 .landing-section {
@@ -84,15 +79,31 @@ h1 {
 .meal-item > header > img {
     width: 100%;
 }
+.meal-item-title {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 100%;
+}
+.meal-description {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 120%;
+}
+.meal-item-price {
+    font-size: 24px;
+    font-weight: 600;
+}
 .meal-item > footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.meal-item button {
+.meal-item-button {
     background-color: white;
     padding: 5px 8px;
     border-radius: 20px;
+    font-size: 16px;
+    font-weight: 600;
 }
 
 .main-footer {
@@ -109,6 +120,8 @@ h1 {
     display: flex;
     flex-direction: column;
     gap: 8px;
+    font-size: 18px;
+    font-weight: 400;
 }
 
 nav {
