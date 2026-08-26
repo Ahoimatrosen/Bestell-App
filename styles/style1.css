@@ -1,0 +1,165 @@
+:root {
+    --main-font-style: Palanquin;
+}
+
+body {
+    font-family: "Palanquin";
+}
+
+h1 {
+    font-family: "Palanquin Dark";
+    font-weight: 700;
+    font-size: 40px;
+}
+
+.landing-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 32px;
+    background-image: url(../assets/img/hero-background-image.jpg);
+    height: 100dvh;
+}
+.landing-section > header {
+    background-color: #e76c1f;
+    width: 100%;
+    padding: 48px 120px 40px 120px;
+}
+.landing-section > img {
+    max-width: 410px;
+    width: 100%;
+    border-radius: 16px;
+    padding: 32px 16px;
+}
+
+.hero-section {
+}
+
+.title-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    text-align: center;
+}
+.title-section img {
+    width: 110px;
+    height: 32px;
+}
+.title-section > div > h1 {
+    font-size: 40px;
+}
+.title-section > div > p {
+    font-size: 22px;
+    font-weight: bold;
+    padding: 16px;
+    line-height: 120%;
+}
+.orange-color {
+    color: #de7027;
+}
+
+.content-section-content {
+    padding: 32px 16px;
+}
+
+.content-section-title-banner {
+    width: 100%;
+}
+
+.meal-item {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 720px;
+    background-color: #fdeadc;
+    border-radius: 12px;
+    padding: 10px;
+}
+.meal-item header {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.meal-item > header > img {
+    width: 100%;
+}
+.meal-item-title {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 100%;
+}
+.meal-description {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 120%;
+}
+.meal-item-price {
+    font-size: 24px;
+    font-weight: 600;
+}
+.meal-item > footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.meal-item-button {
+    background-color: white;
+    padding: 5px 8px;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.main-footer {
+    color: white;
+    background-color: #e76c1f;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 32px 0px;
+    height: 128px;
+}
+
+.main-footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+nav {
+    display: flex;
+    background-color: #363534;
+    height: 80px;
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+}
+
+.navigation-menu {
+    width: 100%;
+    display: flex;
+    gap: 32px;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    padding: 24px 25px;
+}
+
+@media screen and (min-width: 480px) {
+    .landing-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 32px;
+    }
+    .landing-section > img {
+        max-width: none;
+        width: 100%;
+        border-radius: 0px;
+        padding: 0px;
+    }
+}

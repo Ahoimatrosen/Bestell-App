@@ -1,96 +1,64 @@
 <!doctype html>
-<html lang="de">
+
+<!-- font-sizes anpassen -->
+<!-- font-styles anpassen -->
+<html lang="en">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>DSC</title>
-        <link rel="stylesheet" href="styles/style.css" />
-        <link rel="stylesheet" href="styles/standard.css" />
-        <link rel="stylesheet" href="styles/fonts.css" />
+        <link rel="stylesheet" href="./styles/style.css" />
+        <link rel="stylesheet" href="./styles/standard.css" />
+        <link rel="stylesheet" href="./styles/fonts.css" />
         <script src="scripts/script.js"></script>
     </head>
     <body>
-        <section class="landing-section">
+        <section class="landing_section">
             <header>
-                <img src="./assets/img/logo-img.svg" alt="Logo" />
+                <img src="./assets/img/logo-img.svg" alt="Bestell-App Logo" />
+                <img src="./assets/img/burger-menu.png" alt="Burger-Menu" />
             </header>
-            <img class="hero-img" src="./assets/img/hero-img.png" alt="Leckere Gerichte" />
-            <section class="title-section">
-                <img src="./assets/img/rating-img.png" alt="Rating" />
-                <div>
-                    <h1><span class="orange-color">Burger</span>House</h1>
-                    <p>The best of Burgers, Pizza, and Greens, all in one great place.</p>
-                </div>
-            </section>
+            <img class="logo" src="./assets/img/burger-logo-img.png" alt="Burger Logo" />
         </section>
-
-        <main>
-            <section class="content-section">
-                <img class="content-section-title-banner" src="./assets/img/title-banner-burger.svg" alt="Titel-Banner-Burger" />
-                <div class="content-section-content">
-                    <div class="meal-item">
-                        <header>
-                            <img src="./assets/img/order-img.png" alt="Leckere Speise" />
-                            <h2 class="meal-item-title">Veggie mushroom black burger</h2>
-                            <p class="meal-description">Chicken, Mozzarella, Gorgonzola, Fontina, Parmigiano Reggiano</p>
-                        </header>
-                        <footer>
-                            <h2 class="meal-item-price">16,90 €</h2>
-                            <button class="meal-item-button">Add to basket</button>
-                        </footer>
+        <section class="title_section">
+            <div class="title_section_title">
+                <h1><span class="title_colored">Burger</span>House</h1>
+                <div class="rating_box">
+                    <img src="./assets/icons/star-icon.svg" alt="star-icon" />
+                    <div>
+                        <p class="rating_box_average">4,1</p>
+                        <p class="rating_box_amount">(317)</p>
                     </div>
-                </div>
-            </section>
-            <section class="content-section">
-                <img class="content-section-title-banner" src="./assets/img/title-banner-pizza.svg" alt="Titel-Banner-Pizza" />
-                <div class="content-section-content">
-                    <div class="meal-item">
-                        <header>
-                            <img src="./assets/img/order-img.png" alt="Leckere Speise" />
-                            <h2 class="meal-item-title">Veggie mushroom black burger</h2>
-                            <p class="meal-description">Chicken, Mozzarella, Gorgonzola, Fontina, Parmigiano Reggiano</p>
-                        </header>
-                        <footer>
-                            <h2 class="meal-item-price">16,90 €</h2>
-                            <button class="meal-item-button">Add to basket</button>
-                        </footer>
-                    </div>
-                </div>
-            </section>
-            <section class="content-section">
-                <img class="content-section-title-banner" src="./assets/img/title-banner-salad.svg " alt="Titel-Banner" />
-                <div class="content-section-content">
-                    <div class="meal-item">
-                        <header>
-                            <img src="./assets/img/order-img.png" alt="Leckere Speise" />
-                            <h2 class="meal-item-title">Veggie mushroom black burger</h2>
-                            <p class="meal-description">Chicken, Mozzarella, Gorgonzola, Fontina, Parmigiano Reggiano</p>
-                        </header>
-                        <footer>
-                            <h2 class="meal-item-price">16,90 €</h2>
-                            <button class="meal-item-button">Add to basket</button>
-                        </footer>
-                    </div>
-                </div>
-            </section>
-        </main>
-        <footer class="main-footer">
-            <div class="main-footer-content">
-                <p>Imprint</p>
-                <p>Cookie Preference</p>
-                <div class="flexbox center">
-                    <img src="./assets/icons/copyright-icon.png" alt="copyright-icon" />
-                    <p>2025 BurgerHouse</p>
                 </div>
             </div>
+            <p class="title_section_slogan">The best of Burgers, Pizza, and Greens, all in one great place.</p>
+        </section>
+        <section class="content_section">
+            <div class="title_banner">
+                <div>
+                    <img class="title_banner_img" src="./assets/img/banner_img_burger.png" alt="Burger-Icon" />
+                    <h2 class="title_banner_title">Burger & Sandwiches</h2>
+                </div>
+            </div>
+            <div class="content">
+                <article class="order_item">
+                    <img class="order_item_img" src="./assets/img/order-img.png" alt="order-img" />
+                    <div class="order_item_description">
+                        <h2 class="order_item_title">Veggie mushroom black burger</h2>
+                        <p class="order_item_ingredients">Mixed green salad, Tomatoes, Edamame, Mushrooms</p>
+                    </div>
+                    <div class="order_item_order_container">
+                        <h2 class="order_item_price">16,90€</h2>
+                        <button class="order_item_button">Add to basket</button>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <footer>
+            <a href="#"><img src="./assets/icons/copyright-icon.png" alt="copyright-icon" />2025 BurgerHouse</a>
+            <a href="#">Imprint</a>
+            <a href="#">Cookie Preferences</a>
         </footer>
-        <nav>
-            <ul class="navigation-menu">
-                <li><img src="./assets/icons/home-icon.png" alt="home-icon" /></li>
-                <li><img src="./assets/icons/person-icon.png" alt="person-icon" /></li>
-                <li><img src="./assets/icons/orders-icon.png" alt="orders-icon" /></li>
-                <li><img src="./assets/icons/shopping-cart-number-icon.png" alt="shopping-cart-icon mit Nummer" /></li>
-            </ul>
-        </nav>
     </body>
 </html>

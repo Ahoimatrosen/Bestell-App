@@ -42,6 +42,15 @@ button {
 .fs-32 {
     font-size: 32px;
 }
+.fs-48 {
+    font-size: 48px;
+}
 .fs-64 {
     font-size: 64px;
+}
+.fw-400 {
+    font-weight: 400;
+}
+.fw-700 {
+    font-weight: 700;
 }
