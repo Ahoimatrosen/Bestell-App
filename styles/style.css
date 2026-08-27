@@ -24,17 +24,6 @@ h1 {
     font-weight: 700;
 }
 
-footer {
-    height: 128px;
-    background-color: var(--main-bg-color);
-    display: flex;
-    justify-content: center;
-    color: white;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 120%;
-    gap: 72px;
-}
 footer > a {
     padding-top: 20px;
     display: flex;
@@ -119,6 +108,100 @@ footer > a {
     font-size: 18px;
     line-height: 120%;
     color: #726d6d;
+}
+
+/** Basket  */
+
+.basket {
+    background-color: #363534;
+    width: 440px;
+    height: 800px;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    padding: 64px 64px 64px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    position: absolute;
+    right: 0;
+    z-index: 99;
+}
+.basket_title {
+    font-size: 32px;
+    line-height: 120%;
+    font-weight: 700;
+    color: #fdeadc;
+    text-align: center;
+}
+.basket_item {
+    background-color: #fdeadc;
+    color: #363534;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.basket_item_title {
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 120%;
+}
+.basket_item_footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.basket_item_footer_buttons {
+    font-size: 24px;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.basket_item_button {
+    padding: 0;
+}
+.basket_tables {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.basket_checkout_table {
+    font-weight: 600;
+    color: #ffffff;
+}
+.basket_checkout_table th {
+    text-align: left;
+}
+.basket_checkout_table td {
+    text-align: right;
+}
+.basket_total_table {
+    font-weight: 700;
+    color: #ffffff;
+}
+.basket_total_table th {
+    text-align: left;
+}
+.basket_total_table td {
+    font-weight: 700;
+    text-align: right;
+}
+.basket_item_table_seperator {
+    height: 1px;
+    width: 100%;
+    border-top: 3px white solid;
+    padding: 0;
+}
+.basket_buy_button {
+    background: var(--main-bg-color);
+    padding: 13px 55px;
+    color: #fbfbfb;
+    font-size: 32px;
+    line-height: 120%;
+    border-radius: 60px;
+    white-space: nowrap;
 }
 /** Content Section  */
 
@@ -209,4 +292,16 @@ footer > a {
     font-size: 16px;
     line-height: 120%;
     white-space: nowrap;
+}
+
+.main_footer {
+    height: 128px;
+    background-color: var(--main-bg-color);
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 120%;
+    gap: 72px;
 }
