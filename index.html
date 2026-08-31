@@ -10,9 +10,11 @@
         <link rel="stylesheet" href="./styles/style.css" />
         <link rel="stylesheet" href="./styles/standard.css" />
         <link rel="stylesheet" href="./styles/fonts.css" />
-        <script src="scripts/script.js"></script>
+        <script defer src="./scripts/db.js"></script>
+        <script defer src="scripts/script.js"></script>
+        <script defer src="./scripts/templates.js"></script>
     </head>
-    <body>
+    <body onload="renderOrderOptions()">
         <section class="landing_section">
             <header>
                 <img src="./assets/img/logo-img.svg" alt="Bestell-App Logo" />
@@ -33,7 +35,7 @@
             </div>
             <p class="title_section_slogan">The best of Burgers, Pizza, and Greens, all in one great place.</p>
         </section>
-        <section class="content_section">
+        <main>
             <aside class="basket">
                 <h2 class="basket_title">Your Basket</h2>
                 <div class="basket_item">
@@ -70,26 +72,8 @@
                 </div>
                 <button class="basket_buy_button">Buy now (41, 69€)</button>
             </aside>
-            <div class="title_banner">
-                <div>
-                    <img class="title_banner_img" src="./assets/img/banner_img_burger.png" alt="Burger-Icon" />
-                    <h2 class="title_banner_title">Burger & Sandwiches</h2>
-                </div>
-            </div>
-            <div class="content">
-                <article class="order_item">
-                    <img class="order_item_img" src="./assets/img/order-img.png" alt="order-img" />
-                    <div class="order_item_description">
-                        <h2 class="order_item_title">Veggie mushroom black burger</h2>
-                        <p class="order_item_ingredients">Mixed green salad, Tomatoes, Edamame, Mushrooms</p>
-                    </div>
-                    <div class="order_item_order_container">
-                        <h2 class="order_item_price">16,90€</h2>
-                        <button class="order_item_button">Add to basket</button>
-                    </div>
-                </article>
-            </div>
-        </section>
+            <section id="orderOptionsSection"></section>
+        </main>
 
         <footer class="main_footer">
             <a href="#"><img src="./assets/icons/copyright-icon.png" alt="copyright-icon" />2025 BurgerHouse</a>

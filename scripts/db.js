@@ -2,7 +2,7 @@ let orderOptions = [
     {
         category: "burger",
         bannerTitle: "Burger & Sandwiches",
-        bannerImage: "./assets/img/banner_img_burger.png",
+        bannerImage: "./assets/img/banner-img-burger.png",
         items: [
             {
                 name: "Veggie mushroom black burger",
@@ -36,7 +36,7 @@ let orderOptions = [
     {
         category: "pizza",
         bannerTitle: "Pizza",
-        bannerImage: "./assets/img/banner_img_burger.png",
+        bannerImage: "./assets/img/banner-img-pizza.png",
         items: [
             {
                 name: "Pizza Margherita",
@@ -72,7 +72,7 @@ let orderOptions = [
     {
         category: "salad",
         bannerTitle: "Salad",
-        bannerImage: "./assets/img/banner_img_pizza.png",
+        bannerImage: "./assets/img/banner-img-salad.png",
         items: [
             {
                 name: "Warm beef arugula salad",
