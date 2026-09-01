@@ -1,3 +1,7 @@
+//todo: styling in css anpassen: die bilder sind nicht mehr wie vorher und der button ist zu groß und an der falschen stelle und die blöcke sind komisch aufgeteilt
+//todo: preis muss zwei stellen nach dem komma  und "€" anzeigen
+//todo:
+
 function renderOrderOptions() {
     let orderOptionsSectionRef = document.getElementById("orderOptionsSection");
 
@@ -12,7 +16,6 @@ function renderOrderOptions() {
 
         let orderOptionsRef = document.getElementById("orderOptions" + indexOrderOptions);
 
-        //todo aus irgendeinem Grund wird orderOptionsRef = null gesetzt, ich vermute, dass es an der Renderreihenfolge liegt
         orderOptionsRef.innerHTML = "";
 
         const orderOptionItems = orderOptions[indexOrderOptions].items;
@@ -21,7 +24,7 @@ function renderOrderOptions() {
             const orderOptionItemName = orderOptionItems[indexOrderOption].name;
             const orderOptionItemIngredients = orderOptionItems[indexOrderOption].ingredients;
             const orderOptionItemImage = orderOptionItems[indexOrderOption].image;
-            const orderOptionItemPrice = orderOptionItems[indexOrderOption].price;
+            const orderOptionItemPrice = orderOptionItems[indexOrderOption].price.toFixed(2).replace(".", ",");
 
             orderOptionsRef.innerHTML += getOrderOptionsTemplate(
                 orderOptionItemName,

@@ -16,13 +16,15 @@ function getOrderOptionsTemplate(orderOptionItemName, orderOptionItemIngredients
     return `
         <article class="order_item">
             <img class="order_item_img" src="${orderOptionItemImage}" alt="order-img" />
-            <div class="order_item_description">
-                <h2 class="order_item_title">${orderOptionItemName}</h2>
-                <p class="order_item_ingredients">${orderOptionItemIngredients}</p>
-            /div>
-            <div class="order_item_order_container">
-                <h2 class="order_item_price">${orderOptionItemPrice}</h2>
-                <button class="order_item_button">Add to basket</button>
+            <div class="order_item_text">
+                <div class="order_item_description">
+                    <h2 class="order_item_title">${orderOptionItemName}</h2>
+                    <p class="order_item_ingredients">${orderOptionItemIngredients}</p>
+                </div>
+                <div class="order_item_order_container">
+                    <h2 class="order_item_price">${orderOptionItemPrice} €</h2>
+                    <button class="order_item_button">Add to basket</button>
+                </div>
             </div>
         </article>
         `;
