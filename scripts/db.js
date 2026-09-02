@@ -106,4 +106,4 @@ let orderOptions = [
     },
 ];
 
-basketItems = [789, 890, 999, 4545, 454545, 454545, 45454545, 4, 54, 54];
+basketItems = [];

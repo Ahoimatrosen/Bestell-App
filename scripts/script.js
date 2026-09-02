@@ -32,22 +32,32 @@ function renderOrderOptions() {
             );
         }
     }
-    renderBasket();
 }
 
 function addToBasket(indexOrderOptions, indexOrderOption) {
     const orderItemButtonRef = document.getElementById("order_item_button" + indexOrderOptions + indexOrderOption);
     let orderOptionAmount = orderOptions[indexOrderOptions].items[indexOrderOption].amount;
+    let orderOptionName = orderOptions[indexOrderOptions].items[indexOrderOption].name;
+    let orderOptionPrice = orderOptions[indexOrderOptions].items[indexOrderOption].price;
     orderItemButtonRef.classList.toggle("clicked");
     if (orderItemButtonRef.classList.contains("clicked")) {
         orderItemButtonRef.innerText = "Added 1";
         orderOptionAmount = 1;
+        basketItems.unshift({ orderOptionName, orderOptionPrice });
     } else {
         orderItemButtonRef.innerText = "Add to basket";
         orderOptionAmount = 0;
+        // basketItems.splice({ orderOptionName, orderOptionPrice });
     }
 
-    // oderBasketRef = document.getElementById("order_Basket");
+    renderBasketItems();
+}
+
+function renderBasketItems() {
+    orderBasketRef = document.getElementById("order_basket_items");
+    for (let indexBasket = 0; indexBasket < basketItems.length; indexBasket++) {
+        orderBasketRef.innerHTML += getOrderBasketItemTemplate(indexBasket);
+    }
 }
 
 //todo: die buttons müssen beim anclicken ihr styling wechseln
@@ -57,10 +67,3 @@ function addToBasket(indexOrderOptions, indexOrderOption) {
 //todo: die preise im basket müssen zusammengerechnet werden
 //todo: beim bestellen muss ein dialog aufploppen, der angibt, dass man bestellt hat
 //todo: der dialog muss gestyled und gebaut werden
-
-function renderBasket() {
-    orderBasketRef = document.getElementById("order_basket_items");
-    for (let indexBasket = 0; indexBasket < basketItems.length; indexBasket++) {
-        orderBasketRef.innerHTML += getOrderBasketItemTemplate(indexBasket);
-    }
-}
