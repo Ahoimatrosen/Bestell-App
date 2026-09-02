@@ -115,7 +115,6 @@ footer > a {
 .basket {
     background-color: #363534;
     width: 440px;
-    height: 800px;
     border-top-left-radius: 30px;
     border-bottom-left-radius: 30px;
     padding: 64px 64px 64px 32px;
@@ -133,6 +132,15 @@ footer > a {
     color: #fdeadc;
     text-align: center;
 }
+
+.basket_item_container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-y: scroll;
+    height: 460px;
+}
+
 .basket_item {
     background-color: #fdeadc;
     color: #363534;
@@ -289,8 +297,12 @@ footer > a {
     line-height: 120%;
     color: #363534;
     text-align: right;
+    white-space: nowrap;
 }
 .order_item_button {
+    display: flex;
+    justify-content: center;
+    width: 115px;
     padding: 5px 8px;
     background-color: #ffffff;
     border-radius: 20px;
@@ -298,6 +310,9 @@ footer > a {
     font-size: 16px;
     line-height: 120%;
     white-space: nowrap;
+}
+.clicked {
+    color: var(--main-bg-color);
 }
 
 .main_footer {

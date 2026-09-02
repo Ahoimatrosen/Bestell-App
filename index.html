@@ -38,19 +38,7 @@
         <main>
             <aside class="basket">
                 <h2 class="basket_title">Your Basket</h2>
-                <div class="basket_item">
-                    <h3 class="basket_item_title">1x Veggie mushroom black burger</h3>
-                    <footer class="basket_item_footer">
-                        <div class="basket_item_footer_buttons">
-                            <button class="basket_button">
-                                <img class="no_padding" src="./assets/icons/delete-icon-small.png" alt="delete-icon" />
-                            </button>
-                            1
-                            <button class="basket_item_button">+</button>
-                        </div>
-                        <h4>16,90€</h4>
-                    </footer>
-                </div>
+                <div class="basket_item_container" id="order_basket_items"></div>
                 <div class="basket_tables">
                     <table class="basket_checkout_table">
                         <tr>
@@ -72,7 +60,7 @@
                 </div>
                 <button class="basket_buy_button">Buy now (41, 69€)</button>
             </aside>
-            <section id="orderOptionsSection"></section>
+            <section id="order_options_section"></section>
         </main>
 
         <footer class="main_footer">

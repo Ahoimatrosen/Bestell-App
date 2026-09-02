@@ -7,12 +7,19 @@ function getOrderOptionsSectionTemplate(orderOptionsBannerTitle, orderOptionsBan
                 <h2 class="title_banner_title">${orderOptionsBannerTitle}</h2>
             </div>
         </div>
-        <div id="orderOptions${indexOrderOptions}" class="content"></div>
+        <div id="order_options${indexOrderOptions}" class="content"></div>
     </article>
     `;
 }
 
-function getOrderOptionsTemplate(orderOptionItemName, orderOptionItemIngredients, orderOptionItemImage, orderOptionItemPrice) {
+function getOrderOptionsTemplate(
+    orderOptionItemName,
+    orderOptionItemIngredients,
+    orderOptionItemImage,
+    orderOptionItemPrice,
+    indexOrderOptions,
+    indexOrderOption,
+) {
     return `
         <article class="order_item">
             <img class="order_item_img" src="${orderOptionItemImage}" alt="order-img" />
@@ -23,9 +30,27 @@ function getOrderOptionsTemplate(orderOptionItemName, orderOptionItemIngredients
                 </div>
                 <div class="order_item_order_container">
                     <h2 class="order_item_price">${orderOptionItemPrice} €</h2>
-                    <button class="order_item_button">Add to basket</button>
+                    <button id="order_item_button${indexOrderOptions}${indexOrderOption}" onclick="addToBasket(${indexOrderOptions},${indexOrderOption})" class="order_item_button">Add to basket</button>
                 </div>
             </div>
         </article>
         `;
+}
+
+function getOrderBasketItemTemplate(indexBasket) {
+    return `
+    <div class="basket_item">
+        <h3 class="basket_item_title">1x Veggie mushroom black burger</h3>
+        <footer class="basket_item_footer">
+        <div class="basket_item_footer_buttons">
+                <button class="basket_button">
+                    <img class="no_padding" src="./assets/icons/delete-icon-small.png" alt="delete-icon" />
+                    </button>
+                    1
+                <button class="basket_item_button">+</button>
+            </div>
+            <h4>16,90€</h4>
+        </footer>
+    </div>
+    `;
 }

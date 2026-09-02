@@ -1,9 +1,5 @@
-//todo: styling in css anpassen: die bilder sind nicht mehr wie vorher und der button ist zu groß und an der falschen stelle und die blöcke sind komisch aufgeteilt
-//todo: preis muss zwei stellen nach dem komma  und "€" anzeigen
-//todo:
-
 function renderOrderOptions() {
-    let orderOptionsSectionRef = document.getElementById("orderOptionsSection");
+    let orderOptionsSectionRef = document.getElementById("order_options_section");
 
     orderOptionsSectionRef.innerHTML = "";
 
@@ -14,7 +10,7 @@ function renderOrderOptions() {
 
         orderOptionsSectionRef.innerHTML += getOrderOptionsSectionTemplate(orderOptionsBannerTitle, oderOptionsBannerImage, indexOrderOptions);
 
-        let orderOptionsRef = document.getElementById("orderOptions" + indexOrderOptions);
+        let orderOptionsRef = document.getElementById("order_options" + indexOrderOptions);
 
         orderOptionsRef.innerHTML = "";
 
@@ -31,7 +27,40 @@ function renderOrderOptions() {
                 orderOptionItemIngredients,
                 orderOptionItemImage,
                 orderOptionItemPrice,
+                indexOrderOptions,
+                indexOrderOption,
             );
         }
+    }
+    renderBasket();
+}
+
+function addToBasket(indexOrderOptions, indexOrderOption) {
+    const orderItemButtonRef = document.getElementById("order_item_button" + indexOrderOptions + indexOrderOption);
+    let orderOptionAmount = orderOptions[indexOrderOptions].items[indexOrderOption].amount;
+    orderItemButtonRef.classList.toggle("clicked");
+    if (orderItemButtonRef.classList.contains("clicked")) {
+        orderItemButtonRef.innerText = "Added 1";
+        orderOptionAmount = 1;
+    } else {
+        orderItemButtonRef.innerText = "Add to basket";
+        orderOptionAmount = 0;
+    }
+
+    // oderBasketRef = document.getElementById("order_Basket");
+}
+
+//todo: die buttons müssen beim anclicken ihr styling wechseln
+//todo: die buttons müssen beim anclicken ein item in den basket hinzufügen
+//todo: der basket muss rechts sein aber sticky, damit er immer zu sehen ist
+//todo: die gesamte seite responsive werden: zu kleineren Bildschirmen UND zu größeren Bildschirmen
+//todo: die preise im basket müssen zusammengerechnet werden
+//todo: beim bestellen muss ein dialog aufploppen, der angibt, dass man bestellt hat
+//todo: der dialog muss gestyled und gebaut werden
+
+function renderBasket() {
+    orderBasketRef = document.getElementById("order_basket_items");
+    for (let indexBasket = 0; indexBasket < basketItems.length; indexBasket++) {
+        orderBasketRef.innerHTML += getOrderBasketItemTemplate(indexBasket);
     }
 }
