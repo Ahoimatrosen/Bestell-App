@@ -23,6 +23,7 @@ let orderOptions = [
                 ingredients: "Beef, Cheese, Tomatoes, Lettuce, Onion",
                 image: "./assets/img/dish-img/beef-red-burger.png",
                 price: 14.9,
+                amount: 0,
             },
             {
                 name: "Big chicken burger",
@@ -106,4 +107,4 @@ let orderOptions = [
     },
 ];
 
-basketItems = [];
+let basketItems = [];

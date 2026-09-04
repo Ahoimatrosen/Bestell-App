@@ -36,34 +36,37 @@ function renderOrderOptions() {
 
 function addToBasket(indexOrderOptions, indexOrderOption) {
     const orderItemButtonRef = document.getElementById("order_item_button" + indexOrderOptions + indexOrderOption);
+
     let orderOptionAmount = orderOptions[indexOrderOptions].items[indexOrderOption].amount;
+
     let orderOptionName = orderOptions[indexOrderOptions].items[indexOrderOption].name;
+
     let orderOptionPrice = orderOptions[indexOrderOptions].items[indexOrderOption].price;
+
+    let indexInBasket = basketItems.findIndex((item) => item.orderOptionName === orderOptionName);
+
     orderItemButtonRef.classList.toggle("clicked");
+
     if (orderItemButtonRef.classList.contains("clicked")) {
         orderItemButtonRef.innerText = "Added 1";
-        orderOptionAmount = 1;
-        basketItems.unshift({ orderOptionName, orderOptionPrice });
+        orderOptionAmount++;
+        basketItems.push({ orderOptionAmount, orderOptionName, orderOptionPrice });
     } else {
         orderItemButtonRef.innerText = "Add to basket";
-        orderOptionAmount = 0;
-        // basketItems.splice({ orderOptionName, orderOptionPrice });
+        orderOptionAmount--;
+        basketItems.splice(indexInBasket, 1);
     }
-
     renderBasketItems();
 }
 
 function renderBasketItems() {
-    orderBasketRef = document.getElementById("order_basket_items");
+    const orderBasketRef = document.getElementById("order_basket_items");
+    orderBasketRef.innerHTML = "";
     for (let indexBasket = 0; indexBasket < basketItems.length; indexBasket++) {
-        orderBasketRef.innerHTML += getOrderBasketItemTemplate(indexBasket);
+        const basketItem = basketItems[indexBasket];
+        const basketItemAmount = basketItem.orderOptionAmount;
+        const basketItemName = basketItem.orderOptionName;
+        const basketItemPrice = basketItem.orderOptionPrice;
+        orderBasketRef.innerHTML += getOrderBasketItemTemplate(basketItemAmount, basketItemName, basketItemPrice);
     }
 }
-
-//todo: die buttons müssen beim anclicken ihr styling wechseln
-//todo: die buttons müssen beim anclicken ein item in den basket hinzufügen
-//todo: der basket muss rechts sein aber sticky, damit er immer zu sehen ist
-//todo: die gesamte seite responsive werden: zu kleineren Bildschirmen UND zu größeren Bildschirmen
-//todo: die preise im basket müssen zusammengerechnet werden
-//todo: beim bestellen muss ein dialog aufploppen, der angibt, dass man bestellt hat
-//todo: der dialog muss gestyled und gebaut werden

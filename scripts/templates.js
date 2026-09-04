@@ -37,10 +37,10 @@ function getOrderOptionsTemplate(
         `;
 }
 
-function getOrderBasketItemTemplate(indexBasket) {
+function getOrderBasketItemTemplate(basketItemAmount, basketItemName, basketItemPrice) {
     return `
     <div class="basket_item">
-        <h3 class="basket_item_title">1x Veggie mushroom black burger</h3>
+        <h3 class="basket_item_title">${basketItemAmount}x ${basketItemName}</h3>
         <footer class="basket_item_footer">
         <div class="basket_item_footer_buttons">
                 <button class="basket_button">
@@ -49,7 +49,7 @@ function getOrderBasketItemTemplate(indexBasket) {
                     1
                 <button class="basket_item_button">+</button>
             </div>
-            <h4>16,90€</h4>
+            <h4>${basketItemPrice}€</h4>
         </footer>
     </div>
     `;
