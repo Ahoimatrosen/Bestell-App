@@ -25,6 +25,10 @@ button {
     align-items: center;
     justify-content: center;
 }
+
+.d_none {
+    display: none;
+}
 .flexbox {
     display: flex;
 }

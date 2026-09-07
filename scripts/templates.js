@@ -37,17 +37,17 @@ function getOrderOptionsTemplate(
         `;
 }
 
-function getOrderBasketItemTemplate(basketItemAmount, basketItemName, basketItemPrice) {
+function getOrderBasketItemTemplate(basketItemName, basketItemPrice, basketItemAmount, indexBasket) {
     return `
-    <div class="basket_item">
+    <div id="basket_item${indexBasket}" class="basket_item">
         <h3 class="basket_item_title">${basketItemAmount}x ${basketItemName}</h3>
         <footer class="basket_item_footer">
-        <div class="basket_item_footer_buttons">
-                <button class="basket_button">
+            <div class="basket_item_footer_buttons">
+                <button onclick="deleteFromBasket(${indexBasket})" class="basket_button">
                     <img class="no_padding" src="./assets/icons/delete-icon-small.png" alt="delete-icon" />
-                    </button>
-                    1
-                <button class="basket_item_button">+</button>
+                </button>
+                ${basketItemAmount}
+                <button onclick="increaseAmount(${indexBasket})" class="basket_item_button">+</button>
             </div>
             <h4>${basketItemPrice}€</h4>
         </footer>
