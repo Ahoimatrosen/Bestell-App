@@ -39,14 +39,24 @@ function renderBasketItems() {
 
 function changeButtonAppearance(indexOrderOptions, indexOrderOption) {
     const orderItemButtonRef = document.getElementById("order_item_button" + indexOrderOptions + indexOrderOption);
-    orderItemButtonRef.classList.add("clicked");
-    if (orderItemButtonRef.classList.contains("clicked")) {
+    const orderItemName = orderOptions[indexOrderOptions].items[indexOrderOption].name;
+    let itemAmount = 0;
+    for (let index = 0; index < basketItems.length; index++) {
+        if (basketItems[index].name == orderItemName) {
+            itemAmount = basketItems[index].amount;
+            break;
+        }
+    }
+    if (itemAmount > 0) {
+        orderItemButtonRef.classList.add("clicked");
         orderItemButtonRef.innerHTML = "Added";
+    } else if (itemAmount === 0) {
+        orderItemButtonRef.classList.remove("clicked");
+        orderItemButtonRef.innerHTML = "Add to Basket";
     }
 }
 
 function addToBasket(indexOrderOptions, indexOrderOption) {
-    changeButtonAppearance(indexOrderOptions, indexOrderOption);
     const orderItemName = orderOptions[indexOrderOptions].items[indexOrderOption].name;
     const orderItemPrice = orderOptions[indexOrderOptions].items[indexOrderOption].price;
     let isFound = false;
@@ -57,17 +67,28 @@ function addToBasket(indexOrderOptions, indexOrderOption) {
         }
     }
     if (!isFound) {
-        basketItems.push({ name: orderItemName, price: orderItemPrice, amount: 1 });
+        basketItems.push({
+            name: orderItemName,
+            price: orderItemPrice,
+            amount: 1,
+            indexOrderOptions: indexOrderOptions,
+            indexOrderOption: indexOrderOption,
+        });
     }
-
+    changeButtonAppearance(indexOrderOptions, indexOrderOption);
     renderBasketItems();
 }
 
 function deleteFromBasket(indexBasket) {
+    const basketIndexOrderOptions = basketItems[indexBasket].indexOrderOptions;
+    const basketIndexOrderOption = basketItems[indexBasket].indexOrderOption;
+
     basketItems[indexBasket].amount--;
-    if (basketItems[indexBasket].amount == 0) {
+    if (basketItems[indexBasket].amount === 0) {
         basketItems.splice(indexBasket, 1);
     }
+
+    changeButtonAppearance(basketIndexOrderOptions, basketIndexOrderOption);
     renderBasketItems();
 }
 
