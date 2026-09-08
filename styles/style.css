@@ -6,18 +6,6 @@ body {
     font-family: "Palanquin";
 }
 
-header {
-    position: absolute;
-    top: 0px;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    background-color: var(--main-bg-color);
-    height: 128px;
-    padding: 48px 40px 40px 120px;
-    z-index: 1;
-}
-
 h1 {
     font-family: "Palanquin Dark";
     font-size: 48px;
@@ -34,6 +22,18 @@ footer > a {
 }
 
 /**Landing Section */
+
+.main_header {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--main-bg-color);
+    height: 128px;
+    padding: 48px 40px 40px 120px;
+    z-index: 1;
+}
 
 .landing_section {
     background-image: url(../assets/img/hero.png);
@@ -211,6 +211,11 @@ footer > a {
     border-radius: 60px;
     white-space: nowrap;
 }
+
+.basket_delete_button {
+    height: 24px;
+}
+
 /** Content Section  */
 
 .title_banner {

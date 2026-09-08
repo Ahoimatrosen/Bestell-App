@@ -54,3 +54,23 @@ function getOrderBasketItemTemplate(basketItemName, basketItemPrice, basketItemA
     </div>
     `;
 }
+
+//! Das hier ist das Template was ich gebaut habe, damit wir es tauschen können gegen
+`
+<div id="basket_item${indexBasket}" class="basket_item">
+            <header class="flexbox">
+                <h3 class="basket_item_title">${basketItemAmount}x ${basketItemName}</h3>
+                <button onclick="deleteFromBasket(${indexBasket})">
+                    <img class="no_padding basket_delete_button" src="./assets/icons/delete-icon-small.png" alt="delete-icon" />
+                </button>
+            </header>
+            <footer class="basket_item_footer">
+                <div class="basket_item_footer_buttons">
+                    <button onclick="deleteFromBasket(${indexBasket})" class="">-</button>
+                    ${basketItemAmount}
+                    <button onclick="increaseAmount(${indexBasket})" class="basket_item_button">+</button>
+                </div>
+                <h4>${basketItemPrice}€</h4>
+            </footer>
+        </div>
+        `;
