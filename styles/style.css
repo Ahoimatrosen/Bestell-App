@@ -226,6 +226,10 @@ footer > a {
     height: 24px;
 }
 
+.basket_item_header {
+    display: flex;
+    justify-content: space-between;
+}
 /** Content Section  */
 
 .title_banner {

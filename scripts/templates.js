@@ -37,7 +37,7 @@ function getOrderOptionsTemplate(
         `;
 }
 
-function getOrderBasketItemTemplate(basketItemName, basketItemPrice, basketItemAmount, indexBasket) {
+function getOrderBasketItemTemplate(basketItemName, basketItemPrice, basketItemAmount, indexBasket, formattedBasketItemTotalPrice) {
     if (basketItemAmount === 1) {
         return `
     <div id="basket_item${indexBasket}" class="basket_item">
@@ -57,7 +57,7 @@ function getOrderBasketItemTemplate(basketItemName, basketItemPrice, basketItemA
     } else if (basketItemAmount > 1) {
         return `
 <div id="basket_item${indexBasket}" class="basket_item">
-            <header class="flexbox">
+            <header class="basket_item_header">
                 <h3 class="basket_item_title">${basketItemAmount}x ${basketItemName}</h3>
                 <button onclick="deleteFromBasket(${indexBasket})">
                     <img class="no_padding basket_delete_button" src="./assets/icons/delete-icon-small.png" alt="delete-icon" />
@@ -69,7 +69,7 @@ function getOrderBasketItemTemplate(basketItemName, basketItemPrice, basketItemA
                     ${basketItemAmount}
                     <button onclick="increaseAmount(${indexBasket})" class="basket_item_button">+</button>
                 </div>
-                <h4>${basketItemPrice}€</h4>
+                <h4>${formattedBasketItemTotalPrice}€</h4>
             </footer>
         </div>
         `;

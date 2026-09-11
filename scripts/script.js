@@ -33,7 +33,15 @@ function renderBasketItems() {
         const basketItemName = basketItem.name;
         const basketItemPrice = basketItem.price.toFixed(2).replace(".", ",");
         let basketItemAmount = basketItem.amount;
-        orderBasketRef.innerHTML += getOrderBasketItemTemplate(basketItemName, basketItemPrice, basketItemAmount, indexBasket);
+        let basketItemTotalPrice = basketItem.price * basketItem.amount;
+        let formattedBasketItemTotalPrice = basketItemTotalPrice.toFixed(2).replace(".", ",");
+        orderBasketRef.innerHTML += getOrderBasketItemTemplate(
+            basketItemName,
+            basketItemPrice,
+            basketItemAmount,
+            indexBasket,
+            formattedBasketItemTotalPrice,
+        );
     }
 }
 
@@ -82,12 +90,10 @@ function addToBasket(indexOrderOptions, indexOrderOption) {
 function decreaseAmount(indexBasket) {
     const basketIndexOrderOptions = basketItems[indexBasket].indexOrderOptions;
     const basketIndexOrderOption = basketItems[indexBasket].indexOrderOption;
-
     basketItems[indexBasket].amount--;
     if (basketItems[indexBasket].amount === 0) {
         basketItems.splice(indexBasket, 1);
     }
-
     changeButtonAppearance(basketIndexOrderOptions, basketIndexOrderOption);
     renderBasketItems();
 }
