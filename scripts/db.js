@@ -108,3 +108,5 @@ let orderOptions = [
 ];
 
 let basketItems = [];
+
+let checkoutTableItems = [];

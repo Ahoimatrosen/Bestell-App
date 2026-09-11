@@ -99,7 +99,10 @@ function decreaseAmount(indexBasket) {
 }
 
 function increaseAmount(indexBasket) {
+    const basketIndexOrderOptions = basketItems[indexBasket].indexOrderOptions;
+    const basketIndexOrderOption = basketItems[indexBasket].indexOrderOption;
     basketItems[indexBasket].amount++;
+    changeButtonAppearance(basketIndexOrderOptions, basketIndexOrderOption);
     renderBasketItems();
 }
 
