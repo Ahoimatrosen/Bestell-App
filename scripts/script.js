@@ -57,7 +57,7 @@ function changeButtonAppearance(indexOrderOptions, indexOrderOption) {
     }
     if (itemAmount > 0) {
         orderItemButtonRef.classList.add("clicked");
-        orderItemButtonRef.innerHTML = "Added";
+        orderItemButtonRef.innerHTML = "Added" + " " + itemAmount;
     } else if (itemAmount === 0) {
         orderItemButtonRef.classList.remove("clicked");
         orderItemButtonRef.innerHTML = "Add to Basket";
