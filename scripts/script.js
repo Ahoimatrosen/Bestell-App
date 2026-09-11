@@ -79,7 +79,7 @@ function addToBasket(indexOrderOptions, indexOrderOption) {
     renderBasketItems();
 }
 
-function deleteFromBasket(indexBasket) {
+function decreaseAmount(indexBasket) {
     const basketIndexOrderOptions = basketItems[indexBasket].indexOrderOptions;
     const basketIndexOrderOption = basketItems[indexBasket].indexOrderOption;
 
@@ -94,5 +94,13 @@ function deleteFromBasket(indexBasket) {
 
 function increaseAmount(indexBasket) {
     basketItems[indexBasket].amount++;
+    renderBasketItems();
+}
+
+function deleteFromBasket(indexBasket) {
+    const basketIndexOrderOptions = basketItems[indexBasket].indexOrderOptions;
+    const basketIndexOrderOption = basketItems[indexBasket].indexOrderOption;
+    basketItems.splice(indexBasket, 1);
+    changeButtonAppearance(basketIndexOrderOptions, basketIndexOrderOption);
     renderBasketItems();
 }

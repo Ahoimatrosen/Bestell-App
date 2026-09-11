@@ -38,13 +38,14 @@ function getOrderOptionsTemplate(
 }
 
 function getOrderBasketItemTemplate(basketItemName, basketItemPrice, basketItemAmount, indexBasket) {
-    return `
+    if (basketItemAmount === 1) {
+        return `
     <div id="basket_item${indexBasket}" class="basket_item">
         <h3 class="basket_item_title">${basketItemAmount}x ${basketItemName}</h3>
         <footer class="basket_item_footer">
             <div class="basket_item_footer_buttons">
-                <button onclick="deleteFromBasket(${indexBasket})" class="basket_button">
-                    <img class="no_padding" src="./assets/icons/delete-icon-small.png" alt="delete-icon" />
+                <button onclick="deleteFromBasket(${indexBasket})" class="basket_item_button">
+                    <img src="./assets/icons/delete-icon-small.png" alt="delete-icon" />
                 </button>
                 ${basketItemAmount}
                 <button onclick="increaseAmount(${indexBasket})" class="basket_item_button">+</button>
@@ -53,10 +54,8 @@ function getOrderBasketItemTemplate(basketItemName, basketItemPrice, basketItemA
         </footer>
     </div>
     `;
-}
-
-//! Das hier ist das Template was ich gebaut habe, damit wir es tauschen können gegen
-`
+    } else if (basketItemAmount > 1) {
+        return `
 <div id="basket_item${indexBasket}" class="basket_item">
             <header class="flexbox">
                 <h3 class="basket_item_title">${basketItemAmount}x ${basketItemName}</h3>
@@ -66,7 +65,7 @@ function getOrderBasketItemTemplate(basketItemName, basketItemPrice, basketItemA
             </header>
             <footer class="basket_item_footer">
                 <div class="basket_item_footer_buttons">
-                    <button onclick="deleteFromBasket(${indexBasket})" class="">-</button>
+                    <button onclick="decreaseAmount(${indexBasket})" class="">-</button>
                     ${basketItemAmount}
                     <button onclick="increaseAmount(${indexBasket})" class="basket_item_button">+</button>
                 </div>
@@ -74,3 +73,5 @@ function getOrderBasketItemTemplate(basketItemName, basketItemPrice, basketItemA
             </footer>
         </div>
         `;
+    }
+}
