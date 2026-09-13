@@ -75,3 +75,26 @@ function getOrderBasketItemTemplate(basketItemName, basketItemPrice, basketItemA
         `;
     }
 }
+
+function getBasketCheckoutTemplate(formattedBasketSubTotal, deliveryFee, formattedBasketTotal) {
+    return `
+        <table class="basket_checkout_table">
+            <tr>
+                <th>Subtotal</th>
+                <td>${formattedBasketSubTotal}</td>
+            </tr>
+            <tr>
+                <th>Delivery Fee</th>
+                <td>${deliveryFee}€</td>
+            </tr>
+        </table>
+        <div class="basket_item_table_seperator"></div>
+        <table class="basket_total_table">
+            <tr>
+                <th>Total</th>
+                <td>${formattedBasketTotal}€</td>
+            </tr>
+        </table>
+        <button class="basket_buy_button">Buy now (${formattedBasketTotal}€)</button>
+    `;
+}
