@@ -128,3 +128,16 @@ function deleteFromBasket(indexBasket) {
     changeButtonAppearance(basketIndexOrderOptions, basketIndexOrderOption);
     renderBasketItems();
 }
+
+function showCheckoutDialog() {
+    const checkoutDialogRef = document.getElementById("checkout_dialog");
+    checkoutDialogRef.showModal();
+    setTimeout(() => {
+        closeCheckoutDialog();
+    }, 2500);
+}
+
+function closeCheckoutDialog() {
+    const checkoutDialogRef = document.getElementById("checkout_dialog");
+    checkoutDialogRef.close();
+}

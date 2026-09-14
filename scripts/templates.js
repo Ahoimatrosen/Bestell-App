@@ -95,6 +95,6 @@ function getBasketCheckoutTemplate(formattedBasketSubTotal, deliveryFee, formatt
                 <td>${formattedBasketTotal}€</td>
             </tr>
         </table>
-        <button class="basket_buy_button">Buy now (${formattedBasketTotal}€)</button>
+        <button class="basket_buy_button" onclick="showCheckoutDialog()">Buy now (${formattedBasketTotal}€)</button>
     `;
 }

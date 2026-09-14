@@ -1,7 +1,4 @@
 <!doctype html>
-
-<!-- font-sizes anpassen -->
-<!-- font-styles anpassen -->
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
@@ -49,5 +46,18 @@
             <a href="#">Imprint</a>
             <a href="#">Cookie Preferences</a>
         </footer>
+
+        <dialog id="checkout_dialog" class="checkout_dialog_overlay">
+            <div class="checkout_dialog">
+                <header class="checkout_dialog_header">
+                    <button onclick="closeCheckoutDialog()"><img src="./assets/img/dialog_close_button.png" alt="closing button" /></button>
+                </header>
+                <div class="checkout_dialog_content">
+                    <img src="./assets/img/delivery-truck.png" alt="delivery truck" />
+                    <h2>Order Confirmed!</h2>
+                    <h3>Food is on your way!</h3>
+                </div>
+            </div>
+        </dialog>
     </body>
 </html>
