@@ -76,6 +76,15 @@ function getOrderBasketItemTemplate(basketItemName, basketItemPrice, basketItemA
     }
 }
 
+function getEmptyBasketTemplate() {
+    return `
+            <div class="basket_preview">
+                <p>Nothing here yet. Go ahead and choose something delicious!</p>
+                <img src="./assets/img/basket-big.png" alt="basket" />
+            </div>
+            `;
+}
+
 function getBasketCheckoutTemplate(formattedBasketSubTotal, deliveryFee, formattedBasketTotal) {
     return `
         <table class="basket_checkout_table">

@@ -27,36 +27,42 @@ function renderOrderOptions() {
 
 function renderBasketItems() {
     const orderBasketRef = document.getElementById("order_basket_items");
-    orderBasketRef.innerHTML = "";
-    let basketSubTotal = 0;
-    let basketTotal = 0;
-    let deliveryFee = 4.99;
-    let formattedBasketSubTotal = 0;
-    let formattedBasketTotal = 0;
-    for (let indexBasket = 0; indexBasket < basketItems.length; indexBasket++) {
-        const basketItem = basketItems[indexBasket];
-        const basketItemName = basketItem.name;
-        const basketItemPrice = basketItem.price.toFixed(2).replace(".", ",");
-        let basketItemAmount = basketItem.amount;
-        let basketItemTotalPrice = basketItem.price * basketItem.amount;
-        let formattedBasketItemTotalPrice = basketItemTotalPrice.toFixed(2).replace(".", ",");
-        basketSubTotal += basketItemTotalPrice;
-        formattedBasketSubTotal = basketSubTotal.toFixed(2).replace(".", ",");
-        basketTotal = basketSubTotal + deliveryFee;
-        formattedBasketTotal = basketTotal.toFixed(2).replace(".", ",");
-        orderBasketRef.innerHTML += getOrderBasketItemTemplate(
-            basketItemName,
-            basketItemPrice,
-            basketItemAmount,
-            indexBasket,
-            formattedBasketItemTotalPrice,
-        );
-    }
     const basketCheckoutRef = document.getElementById("basket_checkout_table");
-    if (basketItems.length == 0) {
+    if (basketItems.length === 0) {
+        orderBasketRef.innerHTML = getEmptyBasketTemplate();
         basketCheckoutRef.innerHTML = "";
-    } else if (basketItems.length != 0) {
-        basketCheckoutRef.innerHTML = getBasketCheckoutTemplate(formattedBasketSubTotal, deliveryFee, formattedBasketTotal);
+    } else {
+        orderBasketRef.innerHTML = "";
+        let basketSubTotal = 0;
+        let basketTotal = 0;
+        let deliveryFee = 4.99;
+        let formattedBasketSubTotal = 0;
+        let formattedBasketTotal = 0;
+        for (let indexBasket = 0; indexBasket < basketItems.length; indexBasket++) {
+            const basketItem = basketItems[indexBasket];
+            const basketItemName = basketItem.name;
+            const basketItemPrice = basketItem.price.toFixed(2).replace(".", ",");
+            let basketItemAmount = basketItem.amount;
+            let basketItemTotalPrice = basketItem.price * basketItem.amount;
+            let formattedBasketItemTotalPrice = basketItemTotalPrice.toFixed(2).replace(".", ",");
+            basketSubTotal += basketItemTotalPrice;
+            formattedBasketSubTotal = basketSubTotal.toFixed(2).replace(".", ",");
+            basketTotal = basketSubTotal + deliveryFee;
+            formattedBasketTotal = basketTotal.toFixed(2).replace(".", ",");
+            orderBasketRef.innerHTML += getOrderBasketItemTemplate(
+                basketItemName,
+                basketItemPrice,
+                basketItemAmount,
+                indexBasket,
+                formattedBasketItemTotalPrice,
+            );
+        }
+
+        if (basketItems.length == 0) {
+            basketCheckoutRef.innerHTML = "";
+        } else if (basketItems.length != 0) {
+            basketCheckoutRef.innerHTML = getBasketCheckoutTemplate(formattedBasketSubTotal, deliveryFee, formattedBasketTotal);
+        }
     }
 }
 
