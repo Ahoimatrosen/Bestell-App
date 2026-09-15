@@ -138,12 +138,19 @@ function deleteFromBasket(indexBasket) {
 function showCheckoutDialog() {
     const checkoutDialogRef = document.getElementById("checkout_dialog");
     checkoutDialogRef.showModal();
-    setTimeout(() => {
-        closeCheckoutDialog();
-    }, 2500);
 }
 
 function closeCheckoutDialog() {
     const checkoutDialogRef = document.getElementById("checkout_dialog");
     checkoutDialogRef.close();
+}
+
+function checkOut() {
+    showCheckoutDialog();
+    setTimeout(() => {
+        closeCheckoutDialog();
+        basketItems = [];
+        renderBasketItems();
+        renderOrderOptions();
+    }, 2500);
 }
