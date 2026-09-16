@@ -1,69 +1,86 @@
-function renderOrderOptions() {
+function renderOrderOptionSections() {
     const orderOptionsSectionRef = document.getElementById("order_options_section");
     orderOptionsSectionRef.innerHTML = "";
     for (let indexOrderOptions = 0; indexOrderOptions < orderOptions.length; indexOrderOptions++) {
         const orderOptionsBannerTitle = orderOptions[indexOrderOptions].bannerTitle;
         const oderOptionsBannerImage = orderOptions[indexOrderOptions].bannerImage;
         orderOptionsSectionRef.innerHTML += getOrderOptionsSectionTemplate(orderOptionsBannerTitle, oderOptionsBannerImage, indexOrderOptions);
-        const orderOptionsRef = document.getElementById("order_options" + indexOrderOptions);
-        orderOptionsRef.innerHTML = "";
-        const orderOptionItems = orderOptions[indexOrderOptions].items;
-        for (let indexOrderOption = 0; indexOrderOption < orderOptionItems.length; indexOrderOption++) {
-            const orderOptionItemName = orderOptionItems[indexOrderOption].name;
-            const orderOptionItemIngredients = orderOptionItems[indexOrderOption].ingredients;
-            const orderOptionItemImage = orderOptionItems[indexOrderOption].image;
-            const orderOptionItemPrice = orderOptionItems[indexOrderOption].price.toFixed(2).replace(".", ",");
-            orderOptionsRef.innerHTML += getOrderOptionsTemplate(
-                orderOptionItemName,
-                orderOptionItemIngredients,
-                orderOptionItemImage,
-                orderOptionItemPrice,
-                indexOrderOptions,
-                indexOrderOption,
-            );
-        }
+        renderOrderOptions(indexOrderOptions);
     }
 }
 
-function renderBasketItems() {
+function renderOrderOptions(indexOrderOptions) {
+    const orderOptionsRef = document.getElementById("order_options" + indexOrderOptions);
+    const orderOptionItems = orderOptions[indexOrderOptions].items;
+    for (let indexOrderOption = 0; indexOrderOption < orderOptionItems.length; indexOrderOption++) {
+        const orderOptionItemName = orderOptionItems[indexOrderOption].name;
+        const orderOptionItemIngredients = orderOptionItems[indexOrderOption].ingredients;
+        const orderOptionItemImage = orderOptionItems[indexOrderOption].image;
+        const orderOptionItemPrice = orderOptionItems[indexOrderOption].price.toFixed(2).replace(".", ",");
+        orderOptionsRef.innerHTML += getOrderOptionsTemplate(
+            orderOptionItemName,
+            orderOptionItemIngredients,
+            orderOptionItemImage,
+            orderOptionItemPrice,
+            indexOrderOptions,
+            indexOrderOption,
+        );
+    }
+}
+
+function renderBasket() {
     const orderBasketRef = document.getElementById("order_basket_items");
     const basketCheckoutRef = document.getElementById("basket_checkout_table");
     if (basketItems.length === 0) {
-        orderBasketRef.innerHTML = getEmptyBasketTemplate();
-        basketCheckoutRef.innerHTML = "";
+        renderEmptyBasket(orderBasketRef, basketCheckoutRef);
     } else {
-        orderBasketRef.innerHTML = "";
-        let basketSubTotal = 0;
-        let basketTotal = 0;
-        let deliveryFee = 4.99;
-        let formattedBasketSubTotal = 0;
-        let formattedBasketTotal = 0;
-        for (let indexBasket = 0; indexBasket < basketItems.length; indexBasket++) {
-            const basketItem = basketItems[indexBasket];
-            const basketItemName = basketItem.name;
-            const basketItemPrice = basketItem.price.toFixed(2).replace(".", ",");
-            let basketItemAmount = basketItem.amount;
-            let basketItemTotalPrice = basketItem.price * basketItem.amount;
-            let formattedBasketItemTotalPrice = basketItemTotalPrice.toFixed(2).replace(".", ",");
-            basketSubTotal += basketItemTotalPrice;
-            formattedBasketSubTotal = basketSubTotal.toFixed(2).replace(".", ",");
-            basketTotal = basketSubTotal + deliveryFee;
-            formattedBasketTotal = basketTotal.toFixed(2).replace(".", ",");
-            orderBasketRef.innerHTML += getOrderBasketItemTemplate(
-                basketItemName,
-                basketItemPrice,
-                basketItemAmount,
-                indexBasket,
-                formattedBasketItemTotalPrice,
-            );
-        }
-
-        if (basketItems.length == 0) {
-            basketCheckoutRef.innerHTML = "";
-        } else if (basketItems.length != 0) {
-            basketCheckoutRef.innerHTML = getBasketCheckoutTemplate(formattedBasketSubTotal, deliveryFee, formattedBasketTotal);
-        }
+        renderFilledBasket(orderBasketRef, basketCheckoutRef);
     }
+}
+
+function renderEmptyBasket(orderBasketRef, basketCheckoutRef) {
+    orderBasketRef.innerHTML = getEmptyBasketTemplate();
+    basketCheckoutRef.innerHTML = "";
+}
+
+function renderFilledBasket(orderBasketRef, basketCheckoutRef) {
+    orderBasketRef.innerHTML = "";
+    const basketTotals = calculateBasketTotals();
+    renderBasketItems(orderBasketRef);
+
+    basketCheckoutRef.innerHTML = getBasketCheckoutTemplate(basketTotals.basketSubTotal, basketTotals.deliveryFee, basketTotals.basketTotal);
+}
+
+function renderBasketItems(orderBasketRef) {
+    for (let indexBasket = 0; indexBasket < basketItems.length; indexBasket++) {
+        const basketItem = basketItems[indexBasket];
+        const basketItemName = basketItem.name;
+        const basketItemPrice = basketItem.price.toFixed(2).replace(".", ",");
+        let basketItemAmount = basketItem.amount;
+        let basketItemTotalPrice = basketItem.price * basketItem.amount;
+        let formattedBasketItemTotalPrice = basketItemTotalPrice.toFixed(2).replace(".", ",");
+        orderBasketRef.innerHTML += getOrderBasketItemTemplate(
+            basketItemName,
+            basketItemPrice,
+            basketItemAmount,
+            indexBasket,
+            formattedBasketItemTotalPrice,
+        );
+    }
+}
+
+function calculateBasketTotals() {
+    let basketSubTotal = 0;
+    const deliveryFee = 4.99;
+    for (let indexTotalPrice = 0; indexTotalPrice < basketItems.length; indexTotalPrice++) {
+        basketSubTotal += basketItems[indexTotalPrice].price * basketItems[indexTotalPrice].amount;
+    }
+    const basketTotal = basketSubTotal + deliveryFee;
+    return {
+        basketSubTotal: basketSubTotal.toFixed(2).replace(".", ","),
+        deliveryFee: deliveryFee.toFixed(2).replace(".", ","),
+        basketTotal: basketTotal.toFixed(2).replace(".", ","),
+    };
 }
 
 function changeButtonAppearance(indexOrderOptions, indexOrderOption) {
@@ -105,7 +122,7 @@ function addToBasket(indexOrderOptions, indexOrderOption) {
         });
     }
     changeButtonAppearance(indexOrderOptions, indexOrderOption);
-    renderBasketItems();
+    renderBasket();
 }
 
 function decreaseAmount(indexBasket) {
@@ -116,7 +133,7 @@ function decreaseAmount(indexBasket) {
         basketItems.splice(indexBasket, 1);
     }
     changeButtonAppearance(basketIndexOrderOptions, basketIndexOrderOption);
-    renderBasketItems();
+    renderBasket();
 }
 
 function increaseAmount(indexBasket) {
@@ -124,7 +141,7 @@ function increaseAmount(indexBasket) {
     const basketIndexOrderOption = basketItems[indexBasket].indexOrderOption;
     basketItems[indexBasket].amount++;
     changeButtonAppearance(basketIndexOrderOptions, basketIndexOrderOption);
-    renderBasketItems();
+    renderBasket();
 }
 
 function deleteFromBasket(indexBasket) {
@@ -132,7 +149,7 @@ function deleteFromBasket(indexBasket) {
     const basketIndexOrderOption = basketItems[indexBasket].indexOrderOption;
     basketItems.splice(indexBasket, 1);
     changeButtonAppearance(basketIndexOrderOptions, basketIndexOrderOption);
-    renderBasketItems();
+    renderBasket();
 }
 
 function showCheckoutDialog() {
@@ -150,7 +167,7 @@ function checkOut() {
     setTimeout(() => {
         closeCheckoutDialog();
         basketItems = [];
-        renderBasketItems();
-        renderOrderOptions();
+        renderBasket();
+        renderOrderOptionSections();
     }, 2500);
 }
