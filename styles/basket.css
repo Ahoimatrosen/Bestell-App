@@ -1,5 +1,11 @@
 /** Basket  */
 
+.basket_order_items_wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
 .basket {
     background-color: #363534;
     width: 440px;
@@ -10,9 +16,9 @@
     display: flex;
     flex-direction: column;
     gap: 32px;
-    position: absolute;
-    right: 0;
-    z-index: 99;
+    position: sticky;
+    top: 0;
+    z-index: 1;
 }
 .basket_title {
     font-size: 32px;

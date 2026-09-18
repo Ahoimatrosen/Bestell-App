@@ -1,13 +1,13 @@
 function getOrderOptionsSectionTemplate(orderOptionsBannerTitle, orderOptionsBannerImage, indexOrderOptions) {
     return `
     <article>
-        <div class="title_banner">
+    <div class="title_banner">
             <div>
                 <img class="title_banner_img" src="${orderOptionsBannerImage}" alt="Burger-Icon" />
                 <h2 class="title_banner_title">${orderOptionsBannerTitle}</h2>
             </div>
         </div>
-        <div id="order_options${indexOrderOptions}" class="content"></div>
+        <div id="order_options${indexOrderOptions}" class="order_option_container"></div>
     </article>
     `;
 }

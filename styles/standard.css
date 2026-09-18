@@ -18,6 +18,18 @@ button {
     display: flex;
 }
 
+.border-red {
+    border: solid red 4px;
+}
+
+.border-blue {
+    border: solid blue 4px;
+}
+
+.border-green {
+    border: solid green 4px;
+}
+
 .bold {
     font-weight: bold;
 }
@@ -29,6 +41,7 @@ button {
 .d_none {
     display: none;
 }
+
 .flexbox {
     display: flex;
 }
