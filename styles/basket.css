@@ -3,9 +3,7 @@
 .basket_order_items_wrapper {
     display: flex;
     width: 100%;
-    justify-content: space-around;
 }
-
 .basket {
     background-color: #363534;
     width: 440px;
@@ -19,6 +17,7 @@
     position: sticky;
     top: 0;
     z-index: 1;
+    flex-shrink: 0;
 }
 .basket_title {
     font-size: 32px;

@@ -113,7 +113,6 @@ footer > a {
 }
 
 .order_options_section {
-    flex: 1;
     width: 100%;
 }
 
@@ -148,7 +147,7 @@ footer > a {
 /** content  */
 
 .order_option_container {
-    padding: 24px 0px 60px 120px;
+    padding: 24px 48px 60px 120px;
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -164,6 +163,7 @@ footer > a {
     gap: 15px;
     border-radius: 12px;
     padding: 10px;
+    margin-right: 64px;
 }
 .order_item_img {
     object-fit: cover;
@@ -279,4 +279,23 @@ footer > a {
 .checkout_dialog_content h3 {
     font-size: 29px;
     line-height: 120%;
+}
+
+@media screen and (max-width: 1280px) {
+    .order_option_container {
+        padding: 24px 48px 60px 120px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        flex: 0;
+        width: 100%;
+    }
+}
+
+.landing_section {
+    background-image: url(../assets/img/hero.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    position: relative;
 }
