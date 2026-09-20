@@ -4,6 +4,16 @@
     }
 }
 @media screen and (max-width: 1279px) {
+    .main_header {
+        padding: 16px 18px;
+        height: 100%;
+    }
+
+    .header_logo {
+        width: 90px;
+        height: 40px;
+    }
+
     .burger_menu {
         display: none;
     }
