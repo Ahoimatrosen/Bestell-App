@@ -4,6 +4,7 @@
     display: flex;
     width: 100%;
 }
+
 .basket {
     background-color: #363534;
     width: 440px;
@@ -18,7 +19,9 @@
     top: 0;
     z-index: 1;
     flex-shrink: 0;
+    border: none;
 }
+
 .basket_title {
     font-size: 32px;
     line-height: 120%;

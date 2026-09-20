@@ -8,18 +8,19 @@
         <link rel="stylesheet" href="./styles/standard.css" />
         <link rel="stylesheet" href="./styles/fonts.css" />
         <link rel="stylesheet" href="./styles/basket.css" />
+        <link rel="stylesheet" href="./styles/responsive.css" />
         <script defer src="./scripts/db.js"></script>
         <script defer src="scripts/script.js"></script>
         <script defer src="./scripts/templates.js"></script>
     </head>
     <body onload="renderOrderOptionSections()">
-        <section class="landing_section">
-            <header class="main_header">
-                <img src="./assets/img/logo-img.svg" alt="Bestell-App Logo" />
-                <img src="./assets/img/burger-menu.png" alt="Burger-Menu" />
-            </header>
+        <header class="main_header">
+            <img src="./assets/img/logo-img.svg" alt="Bestell-App Logo" />
+            <img class="burger_menu" src="./assets/img/burger-menu.png" alt="Burger-Menu" />
+        </header>
+        <div class="landing_section">
             <img class="logo" src="./assets/img/burger-logo-img.png" alt="Burger Logo" />
-        </section>
+        </div>
         <section class="title_section">
             <div class="title_section_title">
                 <h1><span class="title_colored">Burger</span>House</h1>
@@ -36,7 +37,7 @@
         <main>
             <section class="basket_order_items_wrapper">
                 <section class="order_options_section" id="order_options_section"></section>
-                <aside class="basket">
+                <dialog class="basket">
                     <h2 class="basket_title">Your Basket</h2>
                     <div id="order_basket_items" class="basket_item_container">
                         <div class="basket_preview">
@@ -45,7 +46,7 @@
                         </div>
                     </div>
                     <div id="basket_checkout_table" class="basket_tables"></div>
-                </aside>
+                </dialog>
             </section>
         </main>
 
@@ -54,7 +55,18 @@
             <a href="#">Imprint</a>
             <a href="#">Cookie Preferences</a>
         </footer>
-
+        <nav class="mobile_navbar">
+            <ul class="mobile_navbar_list">
+                <a href="#">
+                    <li><img src="./assets/icons/home-icon.png" alt="" /></li>
+                </a>
+                <li><img src="./assets/icons/person-icon.png" alt="" /></li>
+                <li><img src="./assets/icons/orders-icon.png" alt="" /></li>
+                <button onclick="">
+                    <li><img src="./assets/icons/shopping-cart-icon.png" alt="" /></li>
+                </button>
+            </ul>
+        </nav>
         <dialog id="checkout_dialog" class="checkout_dialog_overlay">
             <div class="checkout_dialog">
                 <header class="checkout_dialog_header">

@@ -13,19 +13,10 @@ h1 {
     font-weight: 700;
 }
 
-footer > a {
-    padding-top: 20px;
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    text-decoration: none;
-    color: white;
-}
-
 /**Landing Section */
 
 .main_header {
-    position: absolute;
+    position: relative;
     top: 0px;
     width: 100%;
     display: flex;
@@ -41,7 +32,7 @@ footer > a {
     background-repeat: no-repeat;
     background-size: cover;
     height: 85dvh;
-    background-position: bottom;
+    background-position: center bottom;
     position: relative;
 }
 
@@ -124,13 +115,13 @@ footer > a {
     height: 60px;
     position: relative;
 }
-.title_banner > div {
+.title_banner_content {
     display: flex;
     justify-content: flex-start;
     align-items: flex-end;
     padding: 0px 0px 0px 164px;
     position: absolute;
-    bottom: 0;
+    bottom: 0px;
 }
 .title_banner_img {
     width: 85px;
@@ -163,7 +154,6 @@ footer > a {
     gap: 15px;
     border-radius: 12px;
     padding: 10px;
-    margin-right: 64px;
 }
 .order_item_img {
     object-fit: cover;
@@ -198,6 +188,7 @@ footer > a {
     display: flex;
     flex-direction: column;
     gap: 48px;
+    justify-content: space-between;
 }
 .order_item_price {
     font-weight: 600;
@@ -233,6 +224,15 @@ footer > a {
     font-size: 18px;
     line-height: 120%;
     gap: 72px;
+}
+
+.main_footer > a {
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    text-decoration: none;
+    color: white;
 }
 
 .checkout_dialog_overlay {
@@ -281,21 +281,22 @@ footer > a {
     line-height: 120%;
 }
 
-@media screen and (max-width: 1280px) {
-    .order_option_container {
-        padding: 24px 48px 60px 120px;
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-        flex: 0;
-        width: 100%;
-    }
+/** Navigation */
+
+.mobile_navbar {
+    background-color: rgba(54, 53, 52, 1);
 }
 
-.landing_section {
-    background-image: url(../assets/img/hero.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: bottom;
-    position: relative;
+.mobile_navbar_list {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+    list-style-type: none;
+}
+
+.mobile_navbar_list img {
+    width: 30px;
+    height: 30px;
 }
