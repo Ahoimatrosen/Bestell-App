@@ -284,16 +284,20 @@ h1 {
 /** Navigation */
 
 .mobile_navbar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
     background-color: rgba(54, 53, 52, 1);
 }
 
 .mobile_navbar_list {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
     width: 100%;
     height: 80px;
     list-style-type: none;
+    padding-inline-start: 0px;
 }
 
 .mobile_navbar_list img {
