@@ -1,7 +1,7 @@
 let orderOptions = [
     {
         category: "burger",
-        bannerTitle: "Burger & Sandwiches",
+        bannerTitle: "Burger <span class='banner_subtitle_burger'>& Sandwiches</span>",
         bannerImage: "./assets/img/banner-img-burger.png",
         items: [
             {
@@ -36,7 +36,7 @@ let orderOptions = [
     },
     {
         category: "pizza",
-        bannerTitle: "Pizza",
+        bannerTitle: "Pizza <span class='banner_subtitle_pizza'>(30 cm)</span>",
         bannerImage: "./assets/img/banner-img-pizza.png",
         items: [
             {

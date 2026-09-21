@@ -127,6 +127,10 @@
         width: 120px;
     }
 
+    .banner_subtitle_burger {
+        display: none;
+    }
+
     .order_item_order_container {
         gap: 20px;
     }
