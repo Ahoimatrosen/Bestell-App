@@ -171,3 +171,25 @@ function checkOut() {
         renderOrderOptionSections();
     }, 2500);
 }
+
+function openBasketOnMobile() {
+    basketRef = document.getElementById("basket");
+    basketRef.setAttribute("style", "display:flex");
+    basketRef.showModal();
+    hideMobileNavbar();
+}
+
+function closeBasketOnMobile() {
+    basketRef = document.getElementById("basket");
+    basketRef.setAttribute("style", "display:none");
+    basketRef.close();
+    showMobileNavbar();
+}
+
+function hideMobileNavbar() {
+    document.getElementById("mobileNavbar").classList.add("d_none");
+}
+
+function showMobileNavbar() {
+    document.getElementById("mobileNavbar").classList.remove("d_none");
+}

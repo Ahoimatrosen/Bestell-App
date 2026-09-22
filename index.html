@@ -18,26 +18,31 @@
             <img class="header_logo" src="./assets/img/logo-img.svg" alt="Bestell-App Logo" />
             <img class="burger_menu" src="./assets/img/burger-menu.png" alt="Burger-Menu" />
         </header>
-        <div class="landing_section">
-            <img class="logo" src="./assets/img/burger-logo-img.png" alt="Burger Logo" />
-        </div>
-        <section class="title_section">
-            <div class="title_section_title">
-                <h1><span class="title_colored">Burger</span>House</h1>
-                <div class="rating_box">
-                    <img src="./assets/icons/star-icon.svg" alt="star-icon" />
-                    <div>
-                        <p class="rating_box_average">4,1</p>
-                        <p class="rating_box_amount">(317)</p>
+        <main>
+            <section class="landing_section">
+                <img class="logo" src="./assets/img/burger-logo-img.png" alt="Burger Logo" />
+            </section>
+            <section class="title_section">
+                <div class="title_section_title">
+                    <h1><span class="title_colored">Burger</span>House</h1>
+                    <div class="rating_box">
+                        <img src="./assets/icons/star-icon.svg" alt="star-icon" />
+                        <div>
+                            <p class="rating_box_average">4,1</p>
+                            <p class="rating_box_amount">(317)</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <p class="title_section_slogan">The best of Burgers, Pizza, and Greens, all in one great place.</p>
-        </section>
-        <main>
+                <p class="title_section_slogan">The best of Burgers, Pizza, and Greens, all in one great place.</p>
+            </section>
             <section class="basket_order_items_wrapper">
                 <section class="order_options_section" id="order_options_section"></section>
-                <dialog class="basket">
+                <dialog id="basket" class="basket">
+                    <header class="basket_header">
+                        <button class="basket_closing_button" onclick="closeBasketOnMobile()">
+                            <img src="./assets/img/dialog_close_button.png" alt="closing button" />
+                        </button>
+                    </header>
                     <h2 class="basket_title">Your Basket</h2>
                     <div id="order_basket_items" class="basket_item_container">
                         <div class="basket_preview">
@@ -55,21 +60,25 @@
             <a href="#">Imprint</a>
             <a href="#">Cookie Preferences</a>
         </footer>
-        <nav class="mobile_navbar">
+        <nav id="mobileNavbar" class="mobile_navbar">
             <ul class="mobile_navbar_list">
-                <a href="#">
-                    <li><img src="./assets/icons/home-icon.png" alt="" /></li>
-                </a>
+                <li>
+                    <a href="#">
+                        <img src="./assets/icons/home-icon.png" alt="" />
+                    </a>
+                </li>
                 <li><img src="./assets/icons/person-icon.png" alt="" /></li>
                 <li><img src="./assets/icons/orders-icon.png" alt="" /></li>
-                <button onclick="">
-                    <li><img src="./assets/icons/shopping-cart-icon.png" alt="" /></li>
-                </button>
+                <li>
+                    <button onclick="openBasketOnMobile()">
+                        <img src="./assets/icons/shopping-cart-icon.png" alt="" />
+                    </button>
+                </li>
             </ul>
         </nav>
         <dialog id="checkout_dialog" class="checkout_dialog_overlay">
             <div class="checkout_dialog">
-                <header class="checkout_dialog_header">
+                <header>
                     <button onclick="closeCheckoutDialog()"><img src="./assets/img/dialog_close_button.png" alt="closing button" /></button>
                 </header>
                 <div class="checkout_dialog_content">

@@ -91,6 +91,19 @@
 
     .basket {
         display: none;
+        background-color: #363534;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        bottom: 0;
+        top: unset;
+        border-top-right-radius: 30px;
+        border-bottom-left-radius: 0px;
+        margin: auto;
+    }
+
+    .basket_closing_button {
+        display: block;
     }
 
     .mobile_navbar {
