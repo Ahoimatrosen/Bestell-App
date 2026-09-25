@@ -165,26 +165,38 @@ function closeCheckoutDialog() {
 function checkOut() {
     showCheckoutDialog();
     setTimeout(() => {
-        closeCheckoutDialog();
         basketItems = [];
+        closeCheckoutDialog();
         renderBasket();
         renderOrderOptionSections();
     }, 2500);
 }
 
 function openBasketOnMobile() {
-    basketRef = document.getElementById("basket");
-    basketRef.setAttribute("style", "display:flex");
-    basketRef.showModal();
+    const basketRef = document.getElementById("basket");
+    basketRef.classList.add("open");
     hideMobileNavbar();
 }
 
 function closeBasketOnMobile() {
-    basketRef = document.getElementById("basket");
-    basketRef.setAttribute("style", "display:none");
-    basketRef.close();
+    const basketRef = document.getElementById("basket");
+    basketRef.classList.remove("open");
     showMobileNavbar();
 }
+
+// function openBasketOnMobile() {
+//     basketRef = document.getElementById("basket");
+//     basketRef.setAttribute("style", "display:flex");
+//     basketRef.showModal();
+//     hideMobileNavbar();
+// }
+
+// function closeBasketOnMobile() {
+//     basketRef = document.getElementById("basket");
+//     basketRef.setAttribute("style", "display:none");
+//     basketRef.close();
+//     showMobileNavbar();
+// }
 
 function hideMobileNavbar() {
     document.getElementById("mobileNavbar").classList.add("d_none");

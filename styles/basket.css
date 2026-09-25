@@ -3,6 +3,7 @@
 .basket_order_items_wrapper {
     display: flex;
     width: 100%;
+    position: relative;
 }
 
 .basket {
@@ -11,10 +12,10 @@
     height: 100dvh;
     border-top-left-radius: 30px;
     border-bottom-left-radius: 30px;
-    padding: 32px 64px 32px 32px;
+    padding: 24px 64px 32px 32px;
     display: flex;
     flex-direction: column;
-    gap: 32px;
+    gap: 24px;
     position: sticky;
     top: 0;
     z-index: 1;
@@ -23,7 +24,8 @@
 }
 
 .basket_header {
-    display: flex;
+    padding: 24px;
+    display: none;
     flex-direction: row-reverse;
 }
 
@@ -65,7 +67,12 @@
     flex-direction: column;
     gap: 10px;
     overflow-y: auto;
-    height: 360px;
+    max-height: 360px;
+}
+
+.basket_item_container:has(.basket_preview) {
+    overflow-y: hidden;
+    height: auto; /* Dehnt sich nicht unnötig aus */
 }
 
 .basket_item {
