@@ -209,7 +209,15 @@ h1 {
     font-size: 16px;
     line-height: 120%;
     white-space: nowrap;
+    transition: all 200ms ease-in 0ms;
 }
+
+.order_item_button:hover {
+    box-shadow: 1px 2px 2px 0px #00000033;
+    color: var(--main-bg-color);
+    transition: all 200ms ease-in 0ms;
+}
+
 .clicked {
     color: var(--main-bg-color);
 }
