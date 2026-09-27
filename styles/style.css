@@ -210,6 +210,7 @@ h1 {
     line-height: 120%;
     white-space: nowrap;
     transition: all 200ms ease-in 0ms;
+    overflow: hidden;
 }
 
 .order_item_button:hover {
@@ -220,6 +221,9 @@ h1 {
 
 .clicked {
     color: var(--main-bg-color);
+    animation: slideOut 500ms forwards;
+    display: inline-block;
+    width: 100%;
 }
 
 .main_footer {
@@ -315,4 +319,23 @@ h1 {
 
 .banner_subtitle_pizza {
     font-weight: 400;
+}
+
+@keyframes slideOut {
+    0% {
+        transform: translateX(0);
+        opacity: 100%;
+    }
+    25% {
+        transform: translateX(100%);
+        opacity: 0%;
+    }
+    50% {
+        transform: translateX(-100%);
+        opacity: 0%;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 100%;
+    }
 }

@@ -84,8 +84,8 @@ function calculateBasketTotals() {
 }
 
 function changeButtonAppearance(indexOrderOptions, indexOrderOption) {
-    const orderItemButtonRef = document.getElementById("order_item_button" + indexOrderOptions + indexOrderOption);
     const orderItemName = orderOptions[indexOrderOptions].items[indexOrderOption].name;
+    const orderItemButtonTextRef = document.getElementById("order_item_button_text" + indexOrderOptions + indexOrderOption);
     let itemAmount = 0;
     for (let index = 0; index < basketItems.length; index++) {
         if (basketItems[index].name == orderItemName) {
@@ -94,11 +94,13 @@ function changeButtonAppearance(indexOrderOptions, indexOrderOption) {
         }
     }
     if (itemAmount > 0) {
-        orderItemButtonRef.classList.add("clicked");
-        orderItemButtonRef.innerHTML = "Added" + " " + itemAmount;
+        orderItemButtonTextRef.classList.add("clicked");
+        setTimeout(() => {
+            orderItemButtonTextRef.innerHTML = "Added" + " " + itemAmount;
+        }, 100);
     } else if (itemAmount === 0) {
-        orderItemButtonRef.classList.remove("clicked");
-        orderItemButtonRef.innerHTML = "Add to Basket";
+        orderItemButtonTextRef.classList.remove("clicked");
+        orderItemButtonTextRef.innerHTML = "Add to Basket";
     }
 }
 
@@ -169,6 +171,7 @@ function checkOut() {
         closeCheckoutDialog();
         renderBasket();
         renderOrderOptionSections();
+        closeBasketOnMobile();
     }, 2500);
 }
 

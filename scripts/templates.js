@@ -30,7 +30,7 @@ function getOrderOptionsTemplate(
                 </div>
                 <div class="order_item_order_container">
                     <h2 class="order_item_price">${orderOptionItemPrice} €</h2>
-                    <button id="order_item_button${indexOrderOptions}${indexOrderOption}" onclick="addToBasket(${indexOrderOptions},${indexOrderOption})" class="order_item_button">Add to basket</button>
+                    <button id="order_item_button${indexOrderOptions}${indexOrderOption}" onclick="addToBasket(${indexOrderOptions},${indexOrderOption})" class="order_item_button"><span id="order_item_button_text${indexOrderOptions}${indexOrderOption}">Add to basket</span></button>
                 </div>
             </div>
         </article>
