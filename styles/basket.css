@@ -102,11 +102,13 @@
     background-color: #fdeadc;
     color: #363534;
     border-radius: 20px;
-    padding: 20px;
+    padding: 16px;
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    min-height: 90px;
+    justify-content: space-between;
+    gap: 0px;
+    min-height: 100px;
+    height: 100%;
     margin-right: 16px;
 }
 .basket_item_title {
@@ -138,6 +140,15 @@
 
 .basket_item_button {
     padding: 0;
+    background-image: url(../assets/icons/delete-icon.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 24px;
+    width: 24px;
+}
+
+.basket_item_button:hover {
+    background-image: url(../assets/icons/delete-icon-hover.png);
 }
 .basket_tables {
     display: flex;
