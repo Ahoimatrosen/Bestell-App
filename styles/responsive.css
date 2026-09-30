@@ -2,14 +2,6 @@
     .mobile_navbar {
         display: none;
     }
-    .basket {
-        display: flex;
-        position: sticky;
-        top: 0;
-        width: 440px;
-        height: 100dvh;
-        flex-shrink: 0;
-    }
 }
 @media screen and (max-width: 1279px) {
     .main_header {
