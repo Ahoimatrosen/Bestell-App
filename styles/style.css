@@ -31,9 +31,10 @@ h1 {
     background-image: url(../assets/img/hero.png);
     background-repeat: no-repeat;
     background-size: cover;
-    height: 85dvh;
+    aspect-ratio: 3 / 1;
     background-position: center bottom;
     position: relative;
+    margin: 0px max(0px, calc((50% - 720px)));
 }
 
 .logo {
