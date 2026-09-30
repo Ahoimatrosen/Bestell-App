@@ -166,12 +166,12 @@ function closeCheckoutDialog() {
 
 function checkOut() {
     showCheckoutDialog();
+    closeBasketOnMobile();
     setTimeout(() => {
         basketItems = [];
         closeCheckoutDialog();
         renderBasket();
         renderOrderOptionSections();
-        closeBasketOnMobile();
     }, 2500);
 }
 
