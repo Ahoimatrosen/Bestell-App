@@ -131,13 +131,6 @@
     gap: 4px;
 }
 
-.basket_item_footer_buttons button {
-    align-items: center;
-    justify-content: center;
-    height: 24px;
-    width: 24px;
-}
-
 .basket_item_button {
     padding: 0;
     background-image: url(../assets/icons/delete-icon.png);
