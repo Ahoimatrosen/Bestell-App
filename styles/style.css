@@ -13,6 +13,10 @@ h1 {
     font-weight: 700;
 }
 
+main {
+    padding: 0px calc(50% - 720px);
+}
+
 /**Landing Section */
 
 .main_header {
@@ -112,17 +116,24 @@ h1 {
 
 .title_banner {
     background-color: var(--main-bg-color);
-    width: calc(100% + 30px);
     height: 60px;
-    position: relative;
+    position: absolute;
+    width: 100vw;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
 }
 .title_banner_content {
     display: flex;
     justify-content: flex-start;
     align-items: flex-end;
-    padding: 0px 0px 0px 164px;
-    position: absolute;
-    bottom: 0px;
+    max-width: 1440px;
+    width: 100%;
+    margin-inline: auto;
+    padding: 0px 0px 0px 120px;
+    height: 100%;
+    position: relative;
 }
 .title_banner_img {
     width: 90px;
@@ -139,7 +150,7 @@ h1 {
 /** content  */
 
 .order_option_container {
-    padding: 24px 48px 60px 120px;
+    padding: 96px 48px 60px 120px;
     display: flex;
     flex-direction: column;
     gap: 16px;
