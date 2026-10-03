@@ -24,7 +24,7 @@
         background-position: center;
         aspect-ratio: 1 / 1;
         width: calc(100% - 32px);
-        height: auto;
+        height: 500px;
         max-height: 85dvh;
     }
 
@@ -69,7 +69,7 @@
 
     .title_banner_img {
         position: absolute;
-        top: -65%;
+        top: -75%;
         width: 60px;
         height: 60px;
     }
@@ -80,7 +80,7 @@
     }
 
     .order_option_container {
-        padding: 24px 24px 60px 120px;
+        padding: 96px 24px 60px 120px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -95,15 +95,33 @@
     }
 
     .basket {
-        display: none;
+        display: flex;
         background-color: #363534;
         padding: 0px 24px 24px;
-        width: 100%;
+        max-width: 1000px;
+        width: 90%;
         height: calc(100% - 80px);
         position: fixed;
         border-top-right-radius: 0px;
         border-top-left-radius: 0px;
         border-bottom-left-radius: 0px;
+        margin-top: 12px;
+        border-top-left-radius: 30px;
+        border-top-right-radius: 30px;
+        transform: translateY(100%);
+        visibility: hidden;
+        transition: none;
+    }
+
+    .basket.is-animating {
+        transition:
+            transform 250ms ease-in-out,
+            visibility 250ms ease-in-out;
+    }
+
+    .basket.open {
+        transform: translateY(0%);
+        visibility: visible;
     }
 
     .basket_item {
@@ -119,10 +137,6 @@
     .basket_item_footer_buttons {
         font-size: 18px;
         gap: 4px;
-    }
-
-    .basket.open {
-        display: flex;
     }
 
     .basket_header {
@@ -150,7 +164,7 @@
 
 @media screen and (max-width: 768px) {
     .order_option_container {
-        padding: 24px 24px 60px 24px;
+        padding: 96px 24px 60px 24px;
         align-items: flex-start;
         justify-content: flex-start;
     }
@@ -190,6 +204,10 @@
 }
 
 @media screen and (max-width: 480px) {
+    .landing_section {
+        height: auto;
+    }
+
     .logo {
         width: 120px;
     }

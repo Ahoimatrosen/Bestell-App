@@ -19,10 +19,11 @@ function getOrderOptionsTemplate(
     orderOptionItemPrice,
     indexOrderOptions,
     indexOrderOption,
+    orderOptionItemImageAlt,
 ) {
     return `
         <article class="order_item">
-            <img class="order_item_img" src="${orderOptionItemImage}" alt="order-img" />
+            <img class="order_item_img" src="${orderOptionItemImage}" alt="${orderOptionItemImageAlt}" />
             <div class="order_item_text">
                 <div class="order_item_description">
                     <h2 class="order_item_title">${orderOptionItemName}</h2>

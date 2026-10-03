@@ -17,6 +17,7 @@ function renderOrderOptions(indexOrderOptions) {
         const orderOptionItemIngredients = orderOptionItems[indexOrderOption].ingredients;
         const orderOptionItemImage = orderOptionItems[indexOrderOption].image;
         const orderOptionItemPrice = orderOptionItems[indexOrderOption].price.toFixed(2).replace(".", ",");
+        const orderOptionItemImageAlt = orderOptionItems[indexOrderOption].imageAlt;
         orderOptionsRef.innerHTML += getOrderOptionsTemplate(
             orderOptionItemName,
             orderOptionItemIngredients,
@@ -24,6 +25,7 @@ function renderOrderOptions(indexOrderOptions) {
             orderOptionItemPrice,
             indexOrderOptions,
             indexOrderOption,
+            orderOptionItemImageAlt,
         );
     }
 }
@@ -180,9 +182,19 @@ function toggleBasketOnMobile() {
     basketRef.classList.toggle("open");
 }
 
+function openBasketOnMobile() {
+    const basketRef = document.getElementById("basket");
+    basketRef.classList.add("is-animating");
+    basketRef.classList.add("open");
+}
+
 function closeBasketOnMobile() {
     const basketRef = document.getElementById("basket");
+    basketRef.classList.add("is-animating");
     basketRef.classList.remove("open");
+    setTimeout(() => {
+        basketRef.classList.remove("is-animating");
+    }, 250);
 }
 
 function hideMobileNavbar() {
@@ -192,3 +204,12 @@ function hideMobileNavbar() {
 function showMobileNavbar() {
     document.getElementById("mobileNavbar").classList.remove("d_none");
 }
+
+let resizeTimer;
+window.addEventListener("resize", () => {
+    document.body.classList.add("resize-animation-stopper");
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+        document.body.classList.remove("resize-animation-stopper");
+    }, 400);
+});
