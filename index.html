@@ -63,22 +63,16 @@
         <nav id="mobileNavbar" class="mobile_navbar">
             <ul class="mobile_navbar_list">
                 <li>
-                    <button>
-                        <a href="#">
-                            <img src="./assets/icons/home-icon.png" alt="" />
-                        </a>
-                    </button>
+                    <button aria-label="home" class="home_button"></button>
                 </li>
                 <li>
-                    <button><img src="./assets/icons/person-icon.png" alt="" /></button>
+                    <button aria-label="login" class="login_button"></button>
                 </li>
                 <li>
-                    <button><img src="./assets/icons/orders-icon.png" alt="" /></button>
+                    <button aria-label="orders" class="orders_button"></button>
                 </li>
                 <li>
-                    <button onclick="toggleBasketOnMobile()">
-                        <img src="./assets/icons/shopping-cart-icon.png" alt="" />
-                    </button>
+                    <button aria-label="basket" class="basket_button" onclick="openBasketOnMobile()"></button>
                 </li>
             </ul>
         </nav>
