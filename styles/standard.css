@@ -14,13 +14,9 @@ button {
     margin: 0;
     font: inherit;
     cursor: pointer;
-    outline: inherit;
     display: flex;
 }
 
-button:focus {
-    border: 2px solid black;
-}
 .border-red {
     border: solid red 4px;
 }
