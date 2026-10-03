@@ -264,7 +264,7 @@ main {
     margin: auto;
     background-color: #363534;
     width: 440px;
-    height: 270px;
+    height: 360px;
     border-radius: 30px;
     padding: 32px 40px;
     border: none;
@@ -280,6 +280,8 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    height: 100%;
 }
 .checkout_dialog header {
     justify-self: flex-end;
