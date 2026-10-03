@@ -5,6 +5,7 @@
 body {
     font-family: "Palanquin";
     overscroll-behavior: contain;
+    overflow-x: hidden;
 }
 
 h1 {
@@ -333,6 +334,76 @@ main {
     font-weight: 400;
 }
 
+.home_button {
+    background-image: url(../assets/icons/home-icon.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 30px;
+    width: 30px;
+}
+
+.home_button:hover {
+    background-image: url(../assets/icons/home-icon-hover.png);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.login_button {
+    background-image: url(../assets/icons/person-icon.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 30px;
+    width: 30px;
+}
+
+.login_button:hover {
+    background-image: url(../assets/icons/person-icon-hover.png);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.orders_button {
+    background-image: url(../assets/icons/orders-icon.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 30px;
+    width: 30px;
+}
+
+.orders_button:hover {
+    background-image: url(../assets/icons/order-icon-hover.png);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.orders_button {
+    background-image: url(../assets/icons/orders-icon.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 30px;
+    width: 30px;
+}
+
+.orders_button:hover {
+    background-image: url(../assets/icons/order-icon-hover.png);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.basket_button {
+    background-image: url(../assets/icons/shopping-cart-icon.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 30px;
+    width: 30px;
+}
+
+.basket_button:hover {
+    background-image: url(../assets/icons/shopping-cart-icon-hover.png);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 @keyframes slideOut {
     0% {
         transform: translateX(0);
@@ -350,4 +421,31 @@ main {
         transform: translateX(0);
         opacity: 100%;
     }
+}
+
+@keyframes slideUpBasket {
+    0% {
+        transform: translateY(100%);
+        z-index: 0;
+    }
+    100% {
+        transform: translateY(0%);
+        z-index: 0;
+    }
+}
+
+@keyframes slideDownBasket {
+    0% {
+        transform: translateY(0%);
+        z-index: 0;
+    }
+    100% {
+        transform: translateY(100%);
+        z-index: 0;
+    }
+}
+
+.resize-animation-stopper * {
+    animation: none !important;
+    transition: none !important;
 }
