@@ -205,6 +205,7 @@ function showMobileNavbar() {
     document.getElementById("mobileNavbar").classList.remove("d_none");
 }
 
+// stopping transition from triggering while window resizing
 let resizeTimer;
 window.addEventListener("resize", () => {
     document.body.classList.add("resize-animation-stopper");
